@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alemdar Labs | Corporate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --primary: #1e293b;
+            /* Slate 800 */
+            --accent: #2563eb;
+            /* Blue 600 */
+            --text: #334155;
+            /* Slate 700 */
+            --light-gray: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-outline {
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 6rem 10%;
+            background: var(--light-gray);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: #64748b;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            background: #cbd5e1;
+            height: 400px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::after {
+            content: "Office / Studio Image";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* Stats */
+        .stats {
+            padding: 4rem 10%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services */
+        .section {
+            padding: 6rem 10%;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #fff;
+            padding: 5rem 10%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col p {
+            color: #94a3b8;
+            max-width: 300px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Alemdar Labs</div>
+        <div class="nav-links">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Investors</a>
+        </div>
+        <a href="#" class="btn-outline">Contact Us</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Building the Future of Digital Entertainment</h1>
+            <p>Alemdar Labs combines technical expertise with creative vision to deliver market-leading mobile gaming
+                experiences.</p>
+            <a href="#" class="btn-outline" style="background: var(--primary); color: #fff;">View Portfolio</a>
+        </div>
+        <div class="hero-image"></div>
+    </header>
+
+    <div class="stats">
+        <div class="stat-item">
+            <strong>5+</strong>
+            <span>Years Experience</span>
+        </div>
+        <div class="stat-item">
+            <strong>10M+</strong>
+            <span>Downloads</span>
+        </div>
+        <div class="stat-item">
+            <strong>20+</strong>
+            <span>Global Partners</span>
+        </div>
+        <div class="stat-item">
+            <strong>UE5</strong>
+            <span>Certified Experts</span>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Our Expertise</h2>
+            <p style="color: #64748b;">Delivering excellence across the entire development lifecycle.</p>
+        </div>
+        <div class="grid">
+            <div class="service-card">
+                <h3>Game Development</h3>
+                <p>End-to-end development using Unreal Engine 5 and Unity, optimized for mobile platforms.</p>
+            </div>
+            <div class="service-card">
+                <h3>Live Operations</h3>
+                <p>Data-driven content updates and event management to maximize user retention and LTV.</p>
+            </div>
+            <div class="service-card">
+                <h3>Publishing Support</h3>
+                <p>Strategic market analysis, user acquisition, and app store optimization services.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Alemdar Labs</h4>
+                <p>A premier mobile game development studio focused on creating high-quality, immersive experiences for
+                    a global audience.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">News</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2024 Alemdar Labs. All rights reserved.</div>
+            <div>Designed in Istanbul.</div>
+        </div>
+
+        <!-- Legal Text for Compliance -->
+        <div style="margin-top: 2rem; font-size: 0.8rem; color: #475569;">
+            <p><strong>Privacy Policy:</strong> Alemdar Labs is committed to protecting your privacy. We collect and
+                process data in accordance with GDPR and CCPA regulations. For inquiries, contact
+                privacy@alemdarlabs.com.</p>
+            <p style="margin-top: 0.5rem;"><strong>Terms of Conditions:</strong> Use of our services constitutes
+                acceptance of our terms. We reserve the right to modify these terms at any time.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alemdar Labs | Fun Mobile Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fff0f5;
+            --primary: #ff4757;
+            --secondary: #2ed573;
+            --accent: #ffa502;
+            --text: #2f3542;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            transform: rotate(-5deg);
+        }
+
+        .cta-btn {
+            background: var(--secondary);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            box-shadow: 0 4px 0 #26af61;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        .cta-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #26af61;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 4rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            min-height: 80vh;
+            background: radial-gradient(circle at top right, #ffeaa7 0%, transparent 40%);
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #57606f;
+            margin-bottom: 2rem;
+        }
+
+        .store-badges {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .store-badge {
+            background: #000;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: #fff;
+            border: 12px solid #2f3542;
+            border-radius: 40px;
+            position: relative;
+            box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 25px;
+            background: #2f3542;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .game-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 900;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        /* Games Grid */
+        .section {
+            padding: 4rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: #eee;
+            border-radius: 22px;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-card p {
+            color: #747d8c;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-sm {
+            background: #f1f2f6;
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            padding: 4rem 5%;
+            margin-top: 4rem;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+        }
+
+        .footer-col a {
+            display: block;
+            color: #747d8c;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .legal-bar {
+            border-top: 2px solid #f1f2f6;
+            padding-top: 2rem;
+            text-align: center;
+            color: #a4b0be;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin-bottom: 2rem;
+            }
+
+            .store-badges {
+                justify-content: center;
+            }
+
+            .phone-mockup {
+                width: 260px;
+                height: 520px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo"><span>AL</span> Alemdar Labs</div>
+        <a href="#" class="cta-btn">Play Now</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>We Make Games That <span>Pop!</span></h1>
+            <p>Dive into colorful worlds, solve puzzles, and challenge your friends. Alemdar Labs brings joy to your
+                fingertips.</p>
+            <div class="store-badges">
+                <a href="#" class="store-badge">
+                    <div style="font-size: 1.5rem;"></div>
+                    <div style="text-align: left; line-height: 1.2;">
+                        <small style="font-size: 0.7rem;">Download on the</small><br>
+                        <strong>App Store</strong>
+                    </div>
+                </a>
+                <a href="#" class="store-badge">
+                    <div style="font-size: 1.5rem;">▶</div>
+                    <div style="text-align: left; line-height: 1.2;">
+                        <small style="font-size: 0.7rem;">GET IT ON</small><br>
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="phone-mockup">
+                <div class="game-screen">
+                    SUPER<br>FUN<br>GAME
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2 class="section-title">Our Top Hits</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="app-icon" style="background: #ff6b6b;"></div>
+                <h3>Candy Smash</h3>
+                <p>Match 3 puzzle adventure with over 1000 levels!</p>
+                <a href="#" class="btn-sm">Download</a>
+            </div>
+            <div class="game-card">
+                <div class="app-icon" style="background: #54a0ff;"></div>
+                <h3>Sky Jumper</h3>
+                <p>Jump higher and higher in this addictive arcade game.</p>
+                <a href="#" class="btn-sm">Download</a>
+            </div>
+            <div class="game-card">
+                <div class="app-icon" style="background: #1dd1a1;"></div>
+                <h3>Farm Life</h3>
+                <p>Build your dream farm and trade with friends.</p>
+                <a href="#" class="btn-sm">Download</a>
+            </div>
+            <div class="game-card">
+                <div class="app-icon" style="background: #feca57;"></div>
+                <h3>Speed Racer</h3>
+                <p>High octane racing action on your mobile.</p>
+                <a href="#" class="btn-sm">Download</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Alemdar Labs</h4>
+                <p style="color: #747d8c;">Creating smiles, one tap at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Games</h4>
+                <a href="#">All Games</a>
+                <a href="#">Support</a>
+                <a href="#">Community</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+
+        <div class="legal-bar">
+            <p>&copy; 2024 Alemdar Labs. All rights reserved.</p>
+            <div style="margin-top: 1rem; font-size: 0.8rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <strong>Privacy Policy:</strong> We value your privacy. We only collect data necessary to improve your
+                gaming experience and do not share it with unauthorized third parties. <br>
+                <strong>Terms of Conditions:</strong> By playing our games, you agree to abide by our community
+                guidelines and fair play rules.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

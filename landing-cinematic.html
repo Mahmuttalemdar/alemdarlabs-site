@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Alemdar Labs | Unreal Engine 5 & Mobil Oyunlar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alemdar Labs, Unreal Engine 5 odaklı oyun stüdyosu. PC, konsol ve mobil için sinematik, yüksek performanslı deneyimler tasarlıyoruz.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-elevated: rgba(255,255,255,0.02);
+      --border-subtle: rgba(255,255,255,0.08);
+      --accent: #7c3aed;
+      --accent-soft: rgba(124,58,237,0.3);
+      --accent-blue: #38bdf8;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --muted-soft: rgba(156,163,175,0.6);
+      --radius-lg: 20px;
+      --shadow-soft: 0 18px 60px rgba(0,0,0,0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(124,58,237,0.35), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(56,189,248,0.32), transparent 55%),
+        linear-gradient(160deg, #020617 0%, #02050f 45%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page-shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 72px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.85);
+      border: 1px solid rgba(148,163,184,0.25);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 40px rgba(15,23,42,0.9);
+      position: sticky;
+      top: 16px;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .brand-logo img {
+      width: 120%;
+      height: auto;
+      display: block;
+    }
+
+    .brand-text-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      border-color: rgba(148,163,184,0.6);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .btn-primary {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #0b1120;
+      background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+      padding: 9px 16px;
+      border-radius: 999px;
+      box-shadow: 0 18px 42px rgba(56,189,248,0.55);
+      transform: translateY(0);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 54px rgba(56,189,248,0.7);
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 40px;
+      margin: 72px 0 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.92);
+      color: var(--muted-soft);
+      font-size: 0.8rem;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: conic-gradient(from 180deg, var(--accent) 0, var(--accent-blue) 40%, #22c55e 80%, var(--accent) 100%);
+      box-shadow: 0 0 0 3px rgba(56,189,248,0.35);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 4.4vw, 3.4rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    h1 span {
+      color: var(--accent-blue);
+    }
+
+    .hero-lead {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 560px;
+      margin-bottom: 24px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .btn-ghost {
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      color: var(--text);
+      background: rgba(15,23,42,0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      color: var(--muted-soft);
+    }
+
+    .pill strong {
+      color: #e5e7eb;
+    }
+
+    .hero-meta {
+      margin-top: 18px;
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+    }
+
+    .hero-meta span {
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      position: relative;
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      border: 1px solid rgba(148,163,184,0.35);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(56,189,248,0.35), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(124,58,237,0.4), transparent 60%),
+        rgba(15,23,42,0.95);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-visual-inner {
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,0.4);
+      padding: 18px;
+      background: radial-gradient(circle at 20% 0%, rgba(148,163,184,0.2), transparent 55%),
+                  linear-gradient(135deg, rgba(15,23,42,0.4), rgba(15,23,42,0.98));
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+    }
+
+    .hero-visual-logo {
+      position: absolute;
+      inset: 16px 16px auto auto;
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      border: 1px solid rgba(251,251,251,0.7);
+      background: #000;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 16px 45px rgba(0,0,0,0.8);
+    }
+
+    .hero-visual-logo img {
+      width: 88%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-visual-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.95);
+      color: var(--muted-soft);
+      margin-bottom: 10px;
+    }
+
+    .ue-badge {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #fff 0, #9ca3af 35%, #020617 100%);
+    }
+
+    .hero-visual-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .hero-visual-text {
+      font-size: 0.9rem;
+      color: var(--muted-soft);
+      max-width: 280px;
+    }
+
+    .hero-visual-metrics {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: rgba(15,23,42,0.95);
+      font-size: 0.8rem;
+      min-width: 120px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 0.96rem;
+    }
+
+    .hero-visual-glow {
+      position: absolute;
+      inset: 25% -40%;
+      background: radial-gradient(circle, rgba(56,189,248,0.35), transparent 60%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    section {
+      margin-bottom: 72px;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 24px;
+      font-size: 0.96rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      color: var(--muted-soft);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-elevated);
+      padding: 16px 16px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted-soft);
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      color: var(--muted-soft);
+    }
+
+    .pipeline {
+      display: grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .pipeline-step {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 14px;
+      align-items: baseline;
+      font-size: 0.9rem;
+    }
+
+    .pipeline-step strong {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted-soft);
+    }
+
+    .pipeline-step h3 {
+      font-size: 0.98rem;
+    }
+
+    .pipeline-step p {
+      color: var(--muted-soft);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(148,163,184,0.4);
+      padding-top: 20px;
+      font-size: 0.86rem;
+      color: var(--muted-soft);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    footer a {
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    @media (max-width: 880px) {
+      nav {
+        border-radius: 16px;
+      }
+      .nav-links {
+        display: none;
+      }
+      header {
+        grid-template-columns: 1fr;
+        margin-top: 44px;
+      }
+      .hero-visual {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-shell {
+        padding-inline: 16px;
+      }
+      .hero-visual-inner {
+        min-height: 220px;
+      }
+      .hero-visual-logo {
+        width: 60px;
+        height: 60px;
+      }
+      .pipeline-step {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <nav>
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="assets/Logo_512x512.png" alt="Alemdar Labs logo">
+        </div>
+        <div>
+          <div class="brand-text-title">Alemdar Labs</div>
+          <div class="brand-text-sub">Unreal Engine 5 & Mobil Oyun Stüdyosu</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#games">Projeler</a>
+        <a href="#services">Neler Yapıyoruz</a>
+        <a href="#pipeline">Süreç</a>
+        <a class="btn-primary" href="mailto:info@alemdarlabs.com">Proje Konuşalım</a>
+      </div>
+    </nav>
+
+    <header>
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Unreal Engine 5 • Mobile • PC
+        </div>
+        <h1>
+          Sinematik <span>UE5 dünyaları</span> ve
+          keskin hissiyatlı mobil oyunlar üretiyoruz.
+        </h1>
+        <p class="hero-lead">
+          Alemdar Labs, çekirdeği Unreal Engine 5 olan oyunları optimizasyon, hissiyat ve
+          canlı servis odağıyla PC’den mobile taşıyan bir oyun stüdyosu.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn-primary" href="mailto:info@alemdarlabs.com">Build veya GDD Gönder</a>
+          <a class="btn-ghost" href="#games">Geliştirme aşamasındaki oyunlar</a>
+        </div>
+        <div class="pill-row">
+          <div class="pill"><strong>Global oyuncu kitlesi</strong> için tasarlanmış core loop’lar</div>
+          <div class="pill"><strong>Vertical slice → soft launch</strong> 16 hafta</div>
+          <div class="pill">Teknik altyapı: multiplayer, backend, telemetri</div>
+        </div>
+        <div class="hero-meta">
+          Şu anda <span>yeni mobil proje partnerleri</span> arıyoruz.
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-label="In-engine preview">
+        <div class="hero-visual-inner">
+          <div class="hero-visual-glow"></div>
+          <div class="hero-visual-logo">
+            <img src="assets/Logo_512x512.png" alt="">
+          </div>
+          <div class="hero-visual-tag">
+            <span class="ue-badge"></span>
+            In-engine shot • Unreal Engine 5
+          </div>
+          <div class="hero-visual-title">Nova Corridor – vertical slice</div>
+          <p class="hero-visual-text">
+            UE5 Lumen aydınlatma, Nanite çevre asset’leri ve mobil için
+            agresif draw call optimizasyonu.
+          </p>
+          <div class="hero-visual-metrics">
+            <div class="metric">
+              <strong>60 FPS</strong>
+              Mid‑range Android hedef cihazlarında sabit performans.
+            </div>
+            <div class="metric">
+              <strong>40%</strong>
+              Soft launch D1 tutulma hedefi, agresif A/B test desteği.
+            </div>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <section id="games">
+      <div class="badge-row">
+        <span class="badge">Geliştirme aşamasındaki oyunlar</span>
+        <span class="badge">PC / Konsol & Mobil</span>
+      </div>
+      <h2>Üzerinde çalıştığımız dünyalar</h2>
+      <p class="section-lead">
+        Henüz duyurulmamış projeler için placeholder isimler kullanıyoruz. Detaylı GDD ve build
+        paylaşımı için bizimle birebir iletişime geçebilirsiniz.
+      </p>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-tag">UE5 • Third person action</div>
+          <h3>Project ORBITAL</h3>
+          <p>
+            HUB bölgesi, rogue‑lite görev yapısı ve co‑op destekli boss savaşları.
+            Minimal UI, güçlü ışık & partikül anlatımı.
+          </p>
+          <div class="chip-row">
+            <span class="chip">PC & konsol</span>
+            <span class="chip">Online co‑op</span>
+            <span class="chip">LiveOps hazır mimari</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">Mobile • Hybrid casual</div>
+          <h3>Pipeline Rush</h3>
+          <p>
+            Tek elle kontrol edilen, kısa seanslı ama derinleştirilebilir ekonomi katmanına sahip
+            mobil oyun. Creatives için hızlı iterasyon dostu core loop.
+          </p>
+          <div class="chip-row">
+            <span class="chip">iOS & Android</span>
+            <span class="chip">UE5 mobile</span>
+            <span class="chip">UA‑first tasarım</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">R&D • Prototip fazı</div>
+          <h3>XR Playground</h3>
+          <p>
+            XR, haptics ve spatial audio ile deneysel mekanikler. Mobil uzantılar ve companion app
+            konseptleriyle test ediliyor.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Prototip lab</span>
+            <span class="chip">Deneysel input</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="badge-row">
+        <span class="badge">Studio capabilities</span>
+      </div>
+      <h2>Neleri uçtan uca üstleniyoruz?</h2>
+      <p class="section-lead">
+        Partner yayıncılar ve IP sahipleri için çekirdek oyun tasarımından, online altyapı ve
+        LiveOps’a kadar tek ekiple ilerleyebileceğiniz bir yapı kurduk.
+      </p>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-tag">Creative & Design</div>
+          <h3>Oyun fikri, prototip ve vertical slice</h3>
+          <p>
+            Pazar sinyallerini okuyan GDD’ler, hızlı prototipler, UE5 blueprint veya C++ ile
+            vertical slice üretimi.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Core loop</span>
+            <span class="chip">Moment‑to‑moment feel</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">Engineering</div>
+          <h3>UE5 engineering, port ve optimizasyon</h3>
+          <p>
+            Lumen / Nanite kullanırken mobil ve mid‑range cihazlarda stabil FPS,
+            network kodu, backend entegrasyonları.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Cross‑platform</span>
+            <span class="chip">Multiplayer</span>
+            <span class="chip">Analytics</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">LiveOps & Growth</div>
+          <h3>Soft launch, UA ve içerik takvimi</h3>
+          <p>
+            Funnel analizi, event & battle‑pass takvimi, pricing deneyleri ve kreatif iterasyon
+            döngüsü.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Soft launch</span>
+            <span class="chip">Live events</span>
+            <span class="chip">Data‑driven</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="pipeline">
+      <div class="badge-row">
+        <span class="badge">Production pipeline</span>
+      </div>
+      <h2>Birlikte üretirken takip ettiğimiz hat</h2>
+      <p class="section-lead">
+        Fikri ilk test edilebilir prototipe, oradan global lansmana taşırken şeffaf, metrik
+        odaklı bir süreç izliyoruz.
+      </p>
+
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <strong>00 — Discovery</strong>
+          <div>
+            <h3>Fikir & referans sprint’i</h3>
+            <p>GDD, referans analizleri, hedef KPI ve teknik risklerin çıkarılması.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <strong>01 — Prototype</strong>
+          <div>
+            <h3>Oynanabilir prototip</h3>
+            <p>Tek platformda, core loop’a odaklı, oyuncu testine hazır build.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <strong>02 — Slice</strong>
+          <div>
+            <h3>Vertical slice & görsel ton</h3>
+            <p>Bir kaç saatlik deneyim, nihai kaliteye çok yakın art direction.</p>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <strong>03 — Soft launch</strong>
+          <div>
+            <h3>LiveOps & büyüme</h3>
+            <p>UA, gelir modelleri, içerik yolu ve teknik ölçümleme ile
+              uzun vadeli işletim.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="card" style="display:flex; flex-wrap:wrap; align-items:center; gap:18px;">
+        <div style="flex:1 1 260px;">
+          <h2>Yeni projen için UE5 & mobil partner arıyorsan konuşalım.</h2>
+          <p class="section-lead">
+            Build, GDD veya sadece fikir seviyesinde de olsan; birlikte ilk prototipi planlamak
+            için bir call ayarlayabiliriz.
+          </p>
+        </div>
+        <a class="btn-primary" href="mailto:info@alemdarlabs.com">info@alemdarlabs.com</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2025 Alemdar Labs. Unreal Engine 5 & mobil oyun stüdyosu.</div>
+      <div><a href="mailto:info@alemdarlabs.com">Bize yazın</a></div>
+    </footer>
+  </div>
+</body>
+</html>
