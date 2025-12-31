@@ -1,628 +1,376 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alemdar Labs | Mobil Oyun Stüdyosu</title>
+    <title>Alemdar Labs | Crafting Digital Experiences</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #070915;
-            --card: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
-            --accent: #7c3aed;
-            --accent-2: #3b82f6;
-            --text: #e5e7eb;
-            --muted: #94a3b8;
+            --bg-color: #ffffff;
+            --text-main: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent-color: #0071e3;
+            --section-bg: #fbfbfd;
+            --nav-height: 44px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #000000;
+                --text-main: #f5f5f7;
+                /* Light gray for ease of reading on dark mode */
+                --text-secondary: #86868b;
+                --section-bg: #121212;
+            }
+
+            nav {
+                background: rgba(0, 0, 0, 0.8);
+            }
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.22), transparent 25%),
-                        radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.24), transparent 30%),
-                        linear-gradient(160deg, #05070f 0%, #0a1020 45%, #0a0b1a 100%);
-            color: var(--text);
-            min-height: 100vh;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            overflow-x: hidden;
         }
 
-        .page-shell {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 32px 20px 96px;
-            position: relative;
-        }
-
+        /* Navigation */
         nav {
+            height: var(--nav-height);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(134, 134, 139, 0.1);
             display: flex;
-            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-content {
+            max-width: 980px;
+            width: 100%;
+            display: flex;
             justify-content: space-between;
-            padding: 12px 18px;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-            backdrop-filter: blur(12px);
-            box-shadow: 0 15px 60px rgba(0,0,0,0.4);
-            position: sticky;
-            top: 16px;
-            z-index: 10;
-        }
-
-        .brand {
-            display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+            padding: 0 22px;
+            font-size: 12px;
         }
 
-        .brand-mark {
-            width: 38px;
-            height: 38px;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            border-radius: 12px;
-            display: grid;
-            place-items: center;
-            color: #fff;
-            font-weight: 900;
-            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+        .logo {
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 18px;
-            align-items: center;
+            gap: 24px;
         }
 
         .nav-links a {
-            color: var(--text);
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 8px 12px;
-            border-radius: 12px;
-            transition: 0.2s ease;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            background: var(--card);
-            border: 1px solid var(--border);
+            color: var(--text-main);
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            color: #fff;
-            padding: 10px 16px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.35);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 36px rgba(124, 58, 237, 0.4);
-        }
-
-        header {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            margin: 72px 0 56px;
-            align-items: center;
-        }
-
-        .badge-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: rgba(255,255,255,0.06);
-            color: var(--text);
-            border: 1px solid var(--border);
-            padding: 10px 14px;
-            border-radius: 999px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .badge span {
-            display: inline-flex;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        }
-
-        h1 {
-            font-size: clamp(2.6rem, 5vw, 3.8rem);
-            line-height: 1.15;
-            margin-bottom: 16px;
-        }
-
-        h1 strong {
-            color: #fff;
-        }
-
-        .lead {
-            color: var(--muted);
-            font-size: 1.05rem;
-            margin-bottom: 28px;
-            max-width: 560px;
-        }
-
-        .cta-row {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .ghost {
-            padding: 10px 14px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            background: var(--card);
-            transition: 0.2s ease;
-        }
-
-        .ghost:hover {
-            border-color: rgba(124, 58, 237, 0.8);
-            color: var(--accent-2);
-        }
-
-        .device {
-            position: relative;
-            background: linear-gradient(160deg, rgba(124, 58, 237, 0.4), rgba(59, 130, 246, 0.45));
-            border-radius: 32px;
-            padding: 18px;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
-        }
-
-        .device::after {
-            content: "";
-            position: absolute;
-            inset: -16px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.12), transparent 45%);
-            filter: blur(10px);
-            z-index: -1;
-        }
-
-        .screen {
-            background: #0b142a;
-            border-radius: 22px;
-            padding: 22px;
-            min-height: 320px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.04);
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
-        }
-
-        .screen::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.22), transparent 40%),
-                        linear-gradient(120deg, rgba(59, 130, 246, 0.35), rgba(124, 58, 237, 0.25));
-            opacity: 0.65;
-            z-index: 1;
-        }
-
-        .screen-art {
-            position: absolute;
-            inset: 0;
-            background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            filter: saturate(1.05) contrast(1.05);
-            opacity: 0.22;
-            z-index: 0;
-            transform: scale(1.08);
-        }
-
-        .floating-card {
-            position: absolute;
-            top: 16%;
-            right: 10%;
-            background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(124,58,237,0.18));
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 16px;
-            padding: 14px;
-            width: 180px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.45);
-        }
-
-        .floating-card h4 {
-            margin-bottom: 6px;
-            font-size: 1rem;
-        }
-
-        .floating-card p {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
-            margin-top: 28px;
-        }
-
-        .pill-card {
-            border: 1px solid var(--border);
-            background: var(--card);
-            border-radius: 18px;
-            padding: 18px;
-        }
-
-        .pill-card strong {
-            display: block;
-            font-size: 1.2rem;
-            margin-bottom: 6px;
-        }
-
-        .pill-card span {
-            color: var(--muted);
-        }
-
-        section {
-            margin-bottom: 70px;
-        }
-
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 12px;
-        }
-
-        section p.section-lead {
-            color: var(--muted);
-            max-width: 760px;
-            margin-bottom: 22px;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 18px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(59, 130, 246, 0.06));
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .card:hover::before { opacity: 1; }
-
-        .card h3 { margin-bottom: 10px; }
-
-        .card p { color: var(--muted); }
-
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            padding: 8px 12px;
-            border-radius: 999px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 12px;
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 18px;
-        }
-
-        .game-card {
-            position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background: var(--card);
-            min-height: 240px;
+        /* Hero Section */
+        .hero {
+            padding-top: calc(var(--nav-height) + 60px);
+            padding-bottom: 80px;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            padding: 18px;
-            isolation: isolate;
+            align-items: center;
         }
 
-        .game-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(160deg, rgba(5, 10, 25, 0.2), rgba(5, 10, 25, 0.75));
-            z-index: 1;
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.05;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--text-main) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .game-card .art {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            filter: saturate(1.1);
-            transform: scale(1.03);
+        .hero p {
+            font-size: clamp(18px, 4vw, 24px);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 400;
+            letter-spacing: -0.2px;
         }
 
-        .game-card h3, .game-card p { position: relative; z-index: 2; }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
 
-        .game-card h3 { margin-bottom: 6px; }
-
-        .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
-
-        .chip {
-            padding: 6px 10px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.08);
+        .btn {
+            background: var(--accent-color);
             color: #fff;
+            padding: 12px 24px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Hero Image Showcase */
+        .hero-showcase {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .phone-frame {
+            background: #fff;
+            /* Placeholder mock bg */
+            border-radius: 40px;
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.15);
+            margin: 0 auto;
+            max-width: 320px;
+            overflow: hidden;
+            border: 8px solid #1d1d1f;
+            position: relative;
+            z-index: 2;
+        }
+
+        .phone-frame img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--section-bg);
+            padding: 120px 0;
+            overflow: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 0 20px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
             font-weight: 700;
-            font-size: 0.85rem;
-            border: 1px solid var(--border);
+            letter-spacing: -1px;
+            margin-bottom: 16px;
         }
 
-        .timeline {
+        .scroll-container {
+            display: flex;
+            gap: 30px;
+            padding: 20px 5vw;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-item {
+            flex: 0 0 280px;
+            scroll-snap-align: center;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .scroll-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .scroll-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Features */
+        .features {
+            padding: 120px 20px;
+            max-width: 980px;
+            margin: 0 auto;
             display: grid;
-            gap: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
         }
 
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 90px 1fr;
-            gap: 14px;
-            align-items: start;
+        .feature h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-main);
         }
 
-        .timeline-item strong {
-            color: #fff;
+        .feature p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
+        /* Footer */
         footer {
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
-            color: var(--muted);
+            background: var(--section-bg);
+            padding: 60px 20px;
+            border-top: 1px solid rgba(134, 134, 139, 0.1);
+        }
+
+        .footer-content {
+            max-width: 980px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 20px;
+            font-size: 11px;
+            color: var(--text-secondary);
         }
 
-        @media (max-width: 768px) {
-            nav { position: static; }
-            .nav-links { display: none; }
-            header { margin-top: 42px; }
-            .timeline-item { grid-template-columns: 1fr; }
-            .page-shell { padding: 24px 18px 72px; }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+            text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
-    <div class="page-shell">
-        <nav>
-            <div class="brand">
-                <div class="brand-mark">AL</div>
-                <div>
-                    <div>Alemdar Labs</div>
-                    <small style="color: var(--muted);">Mobil Oyun Stüdyosu</small>
-                </div>
-            </div>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">Alemdar Labs</a>
             <div class="nav-links">
-                <a href="#games">Oyunlar</a>
-                <a href="#services">Hizmetler</a>
-                <a href="#process">Süreç</a>
-                <a class="btn-primary" href="mailto:info@alemdarlabs.com">Bizimle Çalışın</a>
+                <a href="#vakitify">Vakitify</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <header>
+    <main>
+        <section class="hero" id="vakitify">
+            <h1>Vakitify</h1>
+            <p>Elegance in time. The most precise and beautiful prayer times app for your daily life.</p>
+
+            <div class="cta-buttons">
+                <a href="#" class="btn">Download on App Store</a>
+                <a href="#" class="btn btn-outline">Coming to Android</a>
+            </div>
+
+            <div class="hero-showcase">
+                <div class="phone-frame">
+                    <!-- Using one of the provided assets as hero, assumed to be a main screen -->
+                    <img src="assets/Vakitify/IMG_1363.PNG" alt="Vakitify App Interface">
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="section-header">
+                <h2>Designed for Clarity.</h2>
+                <p style="color: var(--text-secondary);">Every pixel crafted for focus and tranquility.</p>
+            </div>
+
+            <div class="scroll-container">
+                <!-- Gallery Images -->
+                <div class="scroll-item"><img src="assets/Vakitify/IMG_1361.PNG" alt="App Screen 1"></div>
+                <div class="scroll-item"><img src="assets/Vakitify/IMG_1369.PNG" alt="App Screen 2"></div>
+                <div class="scroll-item"><img src="assets/Vakitify/IMG_1366.PNG" alt="App Screen 3"></div>
+                <div class="scroll-item"><img src="assets/Vakitify/IMG_1367.PNG" alt="App Screen 4"></div>
+                <div class="scroll-item"><img src="assets/Vakitify/IMG_1368.PNG" alt="App Screen 5"></div>
+                <div class="scroll-item"><img src="assets/Vakitify/IMG_1365.PNG" alt="App Screen 6"></div>
+            </div>
+        </section>
+
+        <section class="features" id="about">
+            <div class="feature">
+                <h3>Minimalist Design</h3>
+                <p>Distraction-free interface that puts what matters most right in front of you. Clean typography and
+                    spacing bring peace to your daily routine.</p>
+            </div>
+            <div class="feature">
+                <h3>Precise Accuracy</h3>
+                <p>Calculated with astronomical precision. Adjustable methods for every region ensuring you never miss a
+                    prayer.</p>
+            </div>
+            <div class="feature">
+                <h3>Smart Notifications</h3>
+                <p>Respectful alerts that integrate seamlessly with your life. Custom sounds and gentle reminders for
+                    every prayer time.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
             <div>
-                <div class="badge-row">
-                    <span class="badge"><span></span>Hyper Casual & Mid-Core</span>
-                    <span class="badge"><span></span>Unity & Unreal Engine</span>
-                </div>
-                <h1>Mobil oyuncular için <strong>akıcı, ilham verici</strong> deneyimler tasarlıyoruz.</h1>
-                <p class="lead">Alemdar Labs; yaratıcı oyun fikrini, veri odaklı tasarım, üst düzey görsel kalite ve hızlı iterasyon döngüsüyle App Store ve Google Play'e taşır.</p>
-                <div class="cta-row">
-                    <a class="btn-primary" href="mailto:info@alemdarlabs.com">Projeni Başlat</a>
-                    <a class="ghost" href="#services">Stüdyo yaklaşımımız</a>
-                </div>
-                <div class="grid" style="margin-top: 24px;">
-                    <div class="pill-card">
-                        <strong>12M+</strong>
-                        <span>Toplam indirme</span>
-                    </div>
-                    <div class="pill-card">
-                        <strong>30 gün</strong>
-                        <span>Prototipten market testine</span>
-                    </div>
-                    <div class="pill-card">
-                        <strong>Global</strong>
-                        <span>ABD, Avrupa ve MENA lansmanları</span>
-                    </div>
-                </div>
+                &copy; 2022-2025 Alemdar Labs. All rights reserved. Istanbul.
             </div>
-            <div class="device">
-                <div class="screen">
-                    <div class="screen-art" aria-hidden="true"></div>
-                    <div class="floating-card">
-                        <h4>Gerçek zamanlı telemetri</h4>
-                        <p>Kohort başına tutunma, seviye dengesi ve gelir KPI'ları tek panelde.</p>
-                    </div>
-                    <div class="tag">☄️ Canlı etkinlik motoru</div>
-                    <h3 style="margin-bottom: 8px;">Nova Drift</h3>
-                    <p style="color: var(--muted);">Kooperatif roguelite arenasında 4K mobil görsel kalite, düşük gecikme optimizasyonu ve stabil 60 FPS.</p>
-                    <div class="chips">
-                        <span class="chip">GameFeel Lab</span>
-                        <span class="chip">Haptic UX</span>
-                        <span class="chip">HDR Art Direction</span>
-                    </div>
-                </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="#">Support</a>
             </div>
-        </header>
+        </div>
+    </footer>
 
-        <section id="games">
-            <div style="display:flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;">
-                <div>
-                    <h2>Öne çıkan oyunlar</h2>
-                    <p class="section-lead">Farklı türlerde ürettiğimiz, KPI'ları doğrulanmış ve canlıya alınmış mobil oyunlardan bazıları.</p>
-                </div>
-                <a class="ghost" href="mailto:info@alemdarlabs.com">Demo iste</a>
-            </div>
-            <div class="games-grid">
-                <div class="game-card">
-                    <div class="art" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80');"></div>
-                    <h3>Skybound Arena</h3>
-                    <p>Sezonluk battle pass, sosyal klan sistemi ve drop tabanlı ekonomik denge.</p>
-                    <div class="chips">
-                        <span class="chip">Mid-core</span>
-                        <span class="chip">Unity</span>
-                        <span class="chip">UA optimizasyonu</span>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <div class="art" style="background-image: url('https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=1200&q=80');"></div>
-                    <h3>Pulse Runner</h3>
-                    <p>Hyper casual koşu mekaniğini dinamik müzik senkronizasyonu ve günlük görevlerle güçlendirdik.</p>
-                    <div class="chips">
-                        <span class="chip">Hyper casual</span>
-                        <span class="chip"><span aria-hidden="true">⚡</span> 12 günde MVP</span>
-                        <span class="chip">LiveOps</span>
-                    </div>
-                </div>
-                <div class="game-card">
-                    <div class="art" style="background-image: url('https://images.unsplash.com/photo-1524623242805-7d0cc6c785ee?auto=format&fit=crop&w=1200&q=80');"></div>
-                    <h3>Last Light</h3>
-                    <p>Anlatı odaklı puzzle'ları sinematik ışıklandırma ve haptics ile mobilde yeniden yorumladık.</p>
-                    <div class="chips">
-                        <span class="chip">Puzzle</span>
-                        <span class="chip">Unreal Engine</span>
-                        <span class="chip">Story Lab</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services">
-            <h2>Stüdyo yaklaşımı</h2>
-            <p class="section-lead">Kreatif konseptten global lansmana kadar tek ekip. Kullanıcı edinme, analitik ve gelir modelleri ürünün ilk sprintinden itibaren kurgulanır.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="tag">🎨 Creative</div>
-                    <h3>Oyun fikri & prototip</h3>
-                    <p>Pazar sinyallerini takip eden hızlı prototipler, UI kitleri ve AR/VR araştırmalar. Vizyonu oyuncu geri bildirimiyle doğruluyoruz.</p>
-                </div>
-                <div class="card">
-                    <div class="tag">🧠 Data</div>
-                    <h3>Veri odaklı iterasyon</h3>
-                    <p>Amplitute/Looker entegrasyonları, A/B test hatları, seviye bazlı funnel analizi ve otomatik KPI alarmları.</p>
-                </div>
-                <div class="card">
-                    <div class="tag">🚀 Growth</div>
-                    <h3>LiveOps & büyüme</h3>
-                    <p>UA kreatif optimizasyonu, etkinlik takvimleri, IAP/Interstitial dengesi, App Store görsel/güncelleme planları.</p>
-                </div>
-                <div class="card">
-                    <div class="tag">🛡️ Quality</div>
-                    <h3>Performans & güvenilirlik</h3>
-                    <p>CI/CD ile otomatik build, cihaz çiftliği testleri, düşük bellek profili ve gecikme optimizasyonu.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="process">
-            <div style="display:flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;">
-                <div>
-                    <h2>Üretim hattımız</h2>
-                    <p class="section-lead">Oyun çekirdeğini hızla doğrulayan, sonrasında ölçeklenebilir LiveOps'a hazırlayan süreç.</p>
-                </div>
-                <a class="ghost" href="mailto:info@alemdarlabs.com">Süreç konuşalım</a>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <strong>Hafta 1-2</strong>
-                    <div>
-                        <h3>Konsept sprint</h3>
-                        <p class="section-lead">Referans analizi, core loop yazımı, hedef KPI (D1/D7) simülasyonu, prototip planı.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <strong>Hafta 3-4</strong>
-                    <div>
-                        <h3>Playtest & telemetri</h3>
-                        <p class="section-lead">Build paylaşımları, uzaktan testler, seviye ısı haritaları, retention/growth tahminleri.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <strong>Hafta 5-6</strong>
-                    <div>
-                        <h3>Market testi</h3>
-                        <p class="section-lead">UA kreatifleri, App Store/Google Play sayfaları, CPI-LTV modellemesi ve yayın planı.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <strong>LiveOps</strong>
-                    <div>
-                        <h3>Canlıya geçiş</h3>
-                        <p class="section-lead">Etkinlik takvimi, monetizasyon denemeleri, teknik ölçümleme ve sürekli içerik üretimi.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="card" style="display:flex; flex-wrap: wrap; align-items: center; gap: 18px;">
-                <div style="flex:1 1 260px;">
-                    <h2>Birlikte yeni hit'i üretelim.</h2>
-                    <p class="section-lead">Yayıncı arayan stüdyolar, oyun fikrini valide etmek isteyen girişimler veya live game büyütmek isteyen ekipler için yanınızdayız.</p>
-                </div>
-                <a class="btn-primary" href="mailto:info@alemdarlabs.com">info@alemdarlabs.com</a>
-            </div>
-        </section>
-
-        <footer>
-            <div>
-                © 2024 Alemdar Labs. Mobil oyun geliştirme ve LiveOps stüdyosu.
-            </div>
-            <div>
-                <a href="mailto:info@alemdarlabs.com" class="ghost">Bize yazın</a>
-            </div>
-        </footer>
-    </div>
 </body>
+
 </html>
