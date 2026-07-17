@@ -29,7 +29,7 @@
             sliding puzzle game for iOS and Android.
         </p>
         <div class="meta">
-            <span class="pill">Effective date: July 14, 2026</span>
+            <span class="pill">Effective date: July 17, 2026</span>
             <span class="pill">App ID: com.alemdarlabs.slideatelier</span>
         </div>
 
@@ -38,7 +38,9 @@
                 Slide Atelier does not require an account and does not ask for your name, email address, contacts,
                 precise location, photos, or files. Most game data stays on your device. Usage analytics and crash
                 diagnostics are off by default and are sent only if you enable the corresponding choice in the game.
-                We do not sell personal information or use your data for cross-app tracking.
+                The game may show contextual, non-personalized ads through Google Mobile Ads after any required privacy
+                choices are collected. We do not sell personal information or ask for permission to track you across
+                other companies’ apps and websites.
             </p>
         </div>
 
@@ -57,12 +59,14 @@
             <h2>2. Information stored on your device</h2>
             <p>Slide Atelier stores information locally so the game can function offline and remember your choices:</p>
             <ul>
-                <li>game settings, accessibility preferences, and your analytics and diagnostics choices;</li>
+                <li>game settings, accessibility preferences, analytics and diagnostics choices, and advertising
+                    privacy status;</li>
                 <li>Journey progress, puzzle results, best scores, achievements, seals, and tutorial status;</li>
                 <li>locally earned game tokens, unlocked themes, equipped themes, and reward history;</li>
                 <li>Daily Puzzle attempts, results, streaks, and locally cached Daily content;</li>
-                <li>the current puzzle snapshot and session state used to resume interrupted play; and</li>
-                <li>bundled or cached content and configuration needed for reliable offline play.</li>
+                <li>the current puzzle snapshot and session state used to resume interrupted play;</li>
+                <li>bundled or cached content and configuration needed for reliable offline play; and</li>
+                <li>local advertising frequency counters used to limit how often ads may appear.</li>
             </ul>
             <p>
                 This data is stored in the game’s private app storage. It is not uploaded to an Alemdar Labs account or
@@ -113,7 +117,7 @@
                 in diagnostic reports.
             </p>
 
-            <div class="legal-links" aria-label="Firebase privacy resources">
+            <div class="legal-links" role="group" aria-label="Firebase privacy resources">
                 <a class="legal-link" href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Firebase privacy and security</a>
                 <a class="legal-link" href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>
             </div>
@@ -149,7 +153,7 @@
                 and a transaction or receipt token needed to validate the purchase, deliver the digital item, restore
                 purchases, prevent fraud, and handle refunds or revocations.
             </p>
-            <div class="legal-links" aria-label="App store privacy resources">
+            <div class="legal-links" role="group" aria-label="App store privacy resources">
                 <a class="legal-link" href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple Privacy Policy</a>
                 <a class="legal-link" href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>
             </div>
@@ -164,6 +168,8 @@
                 <li>provide safe configuration and disable a feature during an operational incident;</li>
                 <li>understand game usage when analytics has been enabled;</li>
                 <li>detect, diagnose, and repair crashes when diagnostics has been enabled;</li>
+                <li>request and display contextual, non-personalized ads, deliver earned hint rewards, limit ad
+                    frequency, measure ad delivery, and prevent advertising fraud;</li>
                 <li>validate and restore optional purchases if they are offered; and</li>
                 <li>respond to messages, comply with law, and protect users, the game, and our rights.</li>
             </ul>
@@ -172,12 +178,16 @@
         <section>
             <h2>7. When information is disclosed</h2>
             <p>
-                We do not sell personal information. We do not disclose personal information for cross-context
-                behavioral advertising. Information may be disclosed only in these limited situations:
+                We do not sell personal information. Our ad requests are configured without personalized targeting,
+                and the game does not request Apple’s App Tracking Transparency permission. Google and its advertising
+                partners may nevertheless process the limited advertising information described in Section 13 to
+                deliver, measure, secure, and prevent fraud in connection with ads. Information may otherwise be
+                disclosed only in these limited situations:
             </p>
             <ul>
                 <li><strong>Service providers:</strong> Google Firebase processes the functional, optional analytics,
-                    and optional diagnostics information described above on our behalf.</li>
+                    and optional diagnostics information described above. Google Mobile Ads and the Google User
+                    Messaging Platform process advertising requests and privacy choices as described in Section 13.</li>
                 <li><strong>User-directed sharing:</strong> information goes to a destination you select through the
                     operating system share sheet.</li>
                 <li><strong>Legal and safety reasons:</strong> we may disclose information when reasonably necessary to
@@ -196,14 +206,21 @@
             <ul>
                 <li><strong>Usage analytics:</strong> turn it on or off at any time in Settings &gt; Privacy Choices.</li>
                 <li><strong>Crash diagnostics:</strong> turn it on or off independently in Settings &gt; Privacy Choices.</li>
+                <li><strong>Advertising privacy choices:</strong> where required, open Settings &gt; Privacy Choices &gt;
+                    Advertising privacy choices to review or change choices collected through Google’s User Messaging
+                    Platform.</li>
+                <li><strong>Device advertising controls:</strong> you may also use the privacy and advertising controls
+                    provided by iOS, Android, or your Google account.</li>
                 <li><strong>Local play data:</strong> use Delete local play data in Privacy Choices.</li>
                 <li><strong>All local app data:</strong> delete the app or clear its storage through device settings.</li>
                 <li><strong>Requests:</strong> email <a href="mailto:info@alemdarlabs.com">info@alemdarlabs.com</a> for
                     privacy questions or requests relating to information we control.</li>
             </ul>
             <p>
-                Turning off analytics or diagnostics stops future collection by that service from the game. It does not
-                affect core gameplay, locally earned rewards, or your ability to delete local play data.
+                Analytics, diagnostics, and advertising choices are separate. Turning off analytics or diagnostics
+                stops future collection by that service from the game. Declining an advertising choice may result in
+                limited ads, no available ad, or an unavailable rewarded hint, depending on your region and Google’s
+                requirements. It does not block core gameplay or your ability to delete local play data.
             </p>
         </section>
 
@@ -224,6 +241,13 @@
                 and deletion practices.
             </p>
             <p>
+                Google retains advertising, consent, and fraud-prevention information according to its own policies and
+                legal obligations. Advertising privacy choices can be reviewed through the in-game privacy entry point
+                when required, and device-level advertising controls are available through your operating system or
+                Google settings. Alemdar Labs cannot directly identify or delete information controlled independently
+                by Google without a corresponding identifier or legal basis.
+            </p>
+            <p>
                 Support correspondence is retained for as long as needed to answer the request and maintain necessary
                 legal, security, and business records. We may retain limited records when required by law or needed to
                 prevent fraud and protect legal rights.
@@ -241,10 +265,12 @@
             <h2>10. Legal bases for processing</h2>
             <p>
                 Where applicable law requires a legal basis, we process information as necessary to provide the game
-                and its requested features, based on your consent for optional analytics and crash diagnostics, to
-                comply with legal obligations, and for legitimate interests such as security, support, fraud prevention,
-                and improving reliability. You may withdraw consent for future optional collection at any time in the
-                game without affecting processing that occurred before withdrawal.
+                and its requested features, based on your consent for optional analytics, crash diagnostics, device
+                storage, or advertising processing where consent is required, to comply with legal obligations, and for
+                legitimate interests such as security, support, contextual advertising, fraud prevention, and improving
+                reliability where those interests are permitted by law. You may withdraw consent for future optional
+                collection at any time through the applicable in-game control without affecting processing that occurred
+                before withdrawal.
             </p>
         </section>
 
@@ -253,7 +279,8 @@
             <p>
                 We use reasonable technical and organizational measures designed to protect information, including app
                 private storage, collection controls, limited diagnostic fields, and encrypted network transport for
-                Firebase services. No storage or transmission method can be guaranteed completely secure.
+                Firebase and Google Mobile Ads services. No storage or transmission method can be guaranteed completely
+                secure.
             </p>
             <p>
                 Alemdar Labs is based in Turkey, and providers such as Google may process information in other countries.
@@ -274,11 +301,35 @@
         <section>
             <h2>13. Advertising and tracking</h2>
             <p>
-                The version described by this policy does not use an advertising SDK to serve ads. Slide Atelier does
-                not track you across apps or websites owned by other companies. If advertising or a materially different
-                data practice is introduced, we will update this policy and the relevant store disclosures before that
-                practice is enabled.
+                Slide Atelier uses Google Mobile Ads, including AdMob, for optional rewarded hint ads and limited
+                interstitial ads shown at natural breaks after puzzle results. Rewarded ads are initiated by your choice.
+                Interstitial ads are subject to local frequency limits and operational controls. If an ad is unavailable,
+                dismissed, or fails, core gameplay and navigation continue without requiring the ad.
             </p>
+            <p>
+                Ad requests from the game are configured as non-personalized. Slide Atelier does not request Apple’s
+                App Tracking Transparency permission and does not request access to the iOS advertising identifier for
+                cross-app tracking. Non-personalized ads still use contextual and limited technical information. Google
+                and its advertising partners may process:
+            </p>
+            <ul>
+                <li>IP address and approximate location derived from network information;</li>
+                <li>device, app, operating-system, and pseudonymous device or app identifiers available to the SDK;</li>
+                <li>ad requests, impressions, views, clicks, reward events, and other interactions with ads;</li>
+                <li>diagnostic, performance, security, and fraud-prevention information; and</li>
+                <li>privacy and consent signals required to determine whether an ad request is permitted.</li>
+            </ul>
+            <p>
+                Slide Atelier uses Google’s User Messaging Platform to request updated consent information when the app
+                launches, present applicable privacy messages configured for the app, and provide a privacy-options
+                entry point when required. The game checks whether Google permits ad requests before loading an ad.
+                Your available choices and the type of ad that may be served can vary by region, law, device settings,
+                and the choice you make.
+            </p>
+            <div class="legal-links" role="group" aria-label="Advertising privacy resources">
+                <a class="legal-link" href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>
+                <a class="legal-link" href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">How Google uses information for advertising</a>
+            </div>
         </section>
 
         <section>
