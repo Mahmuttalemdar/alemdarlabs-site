@@ -29,7 +29,7 @@
             You can make a request even if you have uninstalled the game.
         </p>
         <div class="meta">
-            <span class="pill">Updated: September 11, 2026</span>
+            <span class="pill">Updated: September 22, 2026</span>
             <span class="pill">App package: com.alemdarlabs.solitaire</span>
         </div>
 
@@ -48,6 +48,22 @@
                 If no email app opens, copy the address and subject into your preferred email service.
             </p>
         </div>
+
+        <section>
+            <h2 id="playtest-deletion">Delete optional playtest data in the app</h2>
+            <p>
+                In version 0.1.9, open the Klondike playtest card on Home, or use Back during a test hand.
+                Choose "Delete my test data" and confirm. This removes this test's Firestore reports and move
+                history, Firebase anonymous identity, and local test records. Ordinary games are preserved.
+                If the connection is interrupted, deletion resumes when the app is opened again.
+            </p>
+            <p>
+                You can instead use the email request above, including when you no longer have the app or its
+                test credential. Mention the invitation-only playtest and your participant label if known.
+                The organizer can help locate the records; not knowing an ID does not prevent you from requesting
+                help. If review copies were previously downloaded, ask us to include them in the request.
+            </p>
+        </section>
 
         <section>
             <h2>What to include</h2>
@@ -80,11 +96,13 @@
                 Where you have used online features, this includes:
             </p>
             <ul>
-                <li>your Solitaire online profile and account records;</li>
+                <li>your optional playtest's random identity, assigned participation record, ratings and comments;</li>
+                <li>playtest results, active time and assistance measurements, and complete move histories;</li>
+                <li>your Solitaire online profile and account records, where such features are used;</li>
                 <li>cloud saves, saved progress, and preferences associated with that account;</li>
                 <li>the account links and identifiers used specifically to provide Solitaire's online features; and</li>
-                <li>related data held by service providers on our behalf, including Epic Online Services
-                    where used for Solitaire.</li>
+                <li>related data held by service providers on our behalf, including Firebase Authentication and
+                    Cloud Firestore for the optional playtest, and Epic Online Services where separately used.</li>
             </ul>
             <p>
                 Deletion is permanent once completed. Your deleted online progress cannot be restored by
@@ -96,8 +114,8 @@
         <section>
             <h2>If you only played offline</h2>
             <p>
-                Offline-only versions, including version 0.1.2, do not create an online Solitaire account or
-                upload your saved hands. To remove local progress and settings, use Android Settings to clear
+                Offline-only versions, and ordinary games played without joining the optional playtest, do not
+                create a test identity or upload your saved hands. To remove local progress and settings, use Android Settings to clear
                 Solitaire's app storage or uninstall the game. Device menus vary by manufacturer.
             </p>
             <p>

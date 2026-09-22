@@ -29,15 +29,17 @@
             single-player card games for Android: Klondike, FreeCell, Spider, Pyramid, and TriPeaks.
         </p>
         <div class="meta">
-            <span class="pill">Effective date: September 11, 2026</span>
+            <span class="pill">Effective date: September 22, 2026</span>
             <span class="pill">App package: com.alemdarlabs.solitaire</span>
         </div>
 
         <div class="callout">
             <p>
-                Solitaire can be played offline and does not require an account. In version 0.1.2, game progress and
-                settings are saved on your device. The game does not send your saved hands to Alemdar Labs, serve ads,
-                offer in-app purchases, or use online analytics or automatic crash-reporting services.
+                Ordinary Solitaire games can be played offline without signing in. Version 0.1.9 adds an optional,
+                invitation-only Klondike playtest. Only after you read the notice and agree does that test create a
+                random test identity and send its results to Alemdar Labs through Google Firebase. Ordinary saved
+                games are not automatically uploaded. The game does not serve ads, offer in-app purchases, or use
+                automatic crash-reporting services.
             </p>
         </div>
 
@@ -64,18 +66,20 @@
                 <li>local recovery records, settings files, and ordinary files needed by the game engine.</li>
             </ul>
             <p>
-                This information is stored in app-specific storage on your device. Solitaire does not currently
-                provide an Alemdar Labs account, online profile, or cloud-save service. Your operating system or device
-                provider may separately offer backup or device-transfer features under its own settings and policies.
+                This information is stored in app-specific storage on your device. Ordinary games do not use an
+                online profile or cloud-save service. Optional playtest records are kept separately as described
+                below. Your operating system or device provider may separately offer backup or device-transfer
+                features under its own settings and policies.
             </p>
         </section>
 
         <section>
             <h2>3. Permissions and device access</h2>
             <p>
-                The Android 0.1.2 package does not request internet, location, contacts, camera, microphone, phone,
-                calendar, SMS, advertising ID, or shared photo and file storage permissions. The game does not ask you
-                to provide your name, email address, or contact list to play.
+                The Android 0.1.9 package uses internet access for the optional playtest's authentication and
+                result delivery. It does not request location, contacts, camera, microphone, phone, calendar, SMS,
+                advertising ID, or shared photo and file storage permissions. Ordinary play does not ask you to
+                provide your name, email address, or contact list.
             </p>
             <p>
                 The package declares permissions for checking network status and Google Play licensing, keeping the
@@ -91,6 +95,26 @@
 
         <section>
             <h2>4. Information you choose to share</h2>
+            <h3 id="closed-playtest">Invitation-only playtesting</h3>
+            <p>
+                Joining requires an invitation and your explicit agreement to the in-app notice. We collect the
+                random test identity, assigned test plan and hand identifiers, game and app version, move history,
+                result, active play time, use of Hint, Solver and Undo, difficulty ratings, and any comment you
+                choose to write. Please do not put personal or sensitive information in comments.
+            </p>
+            <p>
+                We use these records to operate the test, check game behavior, assess difficulty, and improve
+                Solitaire. Results are first saved on your device. If you are offline, the app keeps them there
+                and sends them when it is open with a connection. The app does not import ordinary saved games or
+                earlier local tests into this upload. Test credentials are held in platform-protected storage.
+            </p>
+            <p>
+                Google Firebase Authentication supplies the random identity and Cloud Firestore stores test
+                records on our behalf. Requests use HTTPS. These services receive the connection information
+                needed to handle and protect requests, such as an IP address. Our Firestore database is in
+                Frankfurt, Germany; authentication and service operations may involve other locations under
+                Google's service terms. This is not a public profile or cross-device cloud-save feature.
+            </p>
             <h3>Support messages</h3>
             <p>
                 If you contact us by email or another support channel, we receive the contact details, message, and
@@ -110,8 +134,9 @@
         <section>
             <h2>5. Third-party services</h2>
             <p>
-                The current game does not activate advertising, online analytics, automatic crash reporting, social
-                login, cloud save, multiplayer, leaderboards, or store billing. It is built with Unreal Engine and
+                Apart from the optional Firebase playtest described above, the current game does not activate
+                advertising, online analytics, automatic crash reporting, social login, cloud save, multiplayer,
+                leaderboards, or store billing. It is built with Unreal Engine and
                 includes platform libraries; bundled support for online services does not mean those features are
                 offered in this version.
             </p>
@@ -134,6 +159,7 @@
                 <li>save and resume hands, maintain scores and move history, and support Undo and local recovery;</li>
                 <li>remember game rules, difficulty, appearance, and other preferences;</li>
                 <li>run the card games and their on-device Hint and Solver features;</li>
+                <li>operate the optional playtest, review its results and improve game behavior and difficulty;</li>
                 <li>respond to support requests and investigate technical issues; and</li>
                 <li>comply with legal obligations and protect users, the game, and our rights.</li>
             </ul>
@@ -142,14 +168,15 @@
         <section>
             <h2>7. When information is disclosed</h2>
             <p>
-                We do not sell personal information. Solitaire does not upload your local saved hands or preferences
-                to Alemdar Labs servers or use them for targeted advertising.
+                We do not sell personal information or use it for targeted advertising. Ordinary saved hands and
+                preferences remain local; only the separate playtest data you agree to send is uploaded.
             </p>
             <p>Information we receive outside local gameplay may be disclosed in these limited situations:</p>
             <ul>
                 <li><strong>User-directed actions:</strong> information you choose to send through email, a store
                     review, or another external support channel is handled by that channel and its recipients.</li>
-                <li><strong>Service providers:</strong> email, hosting, and business providers may process support
+                <li><strong>Service providers:</strong> Google Firebase processes the optional playtest's identity
+                    and records on our behalf. Email, hosting, and business providers may process support
                     correspondence or website requests to provide services to us.</li>
                 <li><strong>Legal and safety reasons:</strong> we may disclose information when reasonably necessary
                     to comply with law or legal process, or to protect rights and safety.</li>
@@ -161,6 +188,11 @@
         <section id="your-choices">
             <h2>8. Your privacy choices</h2>
             <ul>
+                <li><strong>Playtest data:</strong> open the Klondike playtest card on Home, or use Back during
+                    a test hand, then choose "Delete my test data" and confirm. This withdraws participation,
+                    deletes this test's server records and anonymous identity, and removes its local records.
+                    Ordinary games are preserved. A connection is needed to complete deletion; interrupted
+                    deletion resumes when the app is opened again.</li>
                 <li><strong>Local game data:</strong> clear Solitaire's app storage or uninstall the game through
                     Android settings. This removes local progress and preferences.</li>
                 <li><strong>Game preferences:</strong> use the available settings and new-game options to change
@@ -176,6 +208,14 @@
 
         <section id="data-deletion">
             <h2>9. Data retention and deletion</h2>
+            <p>
+                Identifiable playtest records are retained while needed to operate and evaluate the test, unless
+                you delete them or make a verified deletion request. We remove them when no longer needed for
+                that purpose. Local unsent results remain until delivered or deleted. Uninstalling the app alone
+                does not delete server records and can remove the credential needed for self-service deletion.
+                If the organizer has already downloaded a review copy, contact us or the organizer so that copy
+                is also included in your deletion request.
+            </p>
             <p>
                 To request deletion of your Solitaire account or personal data held by Alemdar Labs, visit
                 <a href="delete-account.html">Delete your account and data</a>. You can contact us through that
@@ -196,7 +236,8 @@
                 To request deletion of eligible support information we control, email
                 <a href="mailto:info@alemdarlabs.com?subject=Solitaire%20Data%20Deletion">info@alemdarlabs.com</a>
                 with the subject "Solitaire Data Deletion". We may ask for information reasonably necessary to locate
-                the record and verify the request. The current game has no online account to delete.
+                the record and verify the request. If you joined a playtest, mention that and the participant
+                label shown in the test screen if known. You do not need to reinstall the app to contact us.
             </p>
         </section>
 
@@ -242,8 +283,8 @@
         <section>
             <h2>13. Future services</h2>
             <p>
-                If a future version enables advertising, online analytics, crash reporting, accounts, cloud save,
-                leaderboards, purchases, or other online features, we will update this policy and the relevant store
+                If a future version enables advertising, analytics beyond the optional playtest, crash reporting,
+                sign-in accounts, cloud save, leaderboards, purchases, or other online features, we will update this policy and the relevant store
                 declarations before those services are used in a released version. We will provide any required
                 notices and obtain consent where required.
             </p>
