@@ -26,16 +26,16 @@
         <h1>Privacy Policy</h1>
         <p class="summary">
             This Privacy Policy explains how Alemdar Labs handles information when you use Solitaire, a collection of
-            single-player card games for Android: Klondike, FreeCell, Spider, Pyramid, and TriPeaks.
+            single-player card games for Android, iOS, and macOS: Klondike, FreeCell, Spider, Pyramid, and TriPeaks.
         </p>
         <div class="meta">
-            <span class="pill">Effective date: September 22, 2026</span>
-            <span class="pill">App package: com.alemdarlabs.solitaire</span>
+            <span class="pill">Effective date: September 27, 2026</span>
+            <span class="pill">App identifier: com.alemdarlabs.solitaire</span>
         </div>
 
         <div class="callout">
             <p>
-                Ordinary Solitaire games can be played offline without signing in. Version 0.1.9 adds an optional,
+                Ordinary Solitaire games can be played offline without signing in. Solitaire includes an optional,
                 invitation-only Klondike playtest. Only after you read the notice and agree does that test create a
                 random test identity and send its results to Alemdar Labs through Google Firebase. Ordinary saved
                 games are not automatically uploaded. The game does not serve ads, offer in-app purchases, or use
@@ -47,7 +47,7 @@
             <h2>1. Who we are</h2>
             <p>
                 Solitaire is provided by Alemdar Labs. In this policy, "we", "us", and "our" mean Alemdar Labs,
-                and "Solitaire" or "the game" means the Solitaire mobile application.
+                and "Solitaire" or "the game" means the Solitaire application on supported mobile and desktop platforms.
             </p>
             <p>
                 Privacy contact: <a href="mailto:info@alemdarlabs.com">info@alemdarlabs.com</a>
@@ -76,20 +76,20 @@
         <section>
             <h2>3. Permissions and device access</h2>
             <p>
-                The Android 0.1.9 package uses internet access for the optional playtest's authentication and
+                The game uses internet access for the optional playtest's authentication and
                 result delivery. It does not request location, contacts, camera, microphone, phone, calendar, SMS,
                 advertising ID, or shared photo and file storage permissions. Ordinary play does not ask you to
                 provide your name, email address, or contact list.
             </p>
             <p>
-                The package declares permissions for checking network status and Google Play licensing, keeping the
+                On Android, the package declares permissions for checking network status and Google Play licensing, keeping the
                 device awake, adjusting audio settings, and vibration. It also declares an app-specific permission
                 that protects internal messages between app components. These permissions support platform and
                 engine functionality; they are not used to collect your contacts, location, or media.
             </p>
             <p>
-                Google Play and your device may use their own network access to install, update, or deliver game
-                files. That platform activity is separate from the game's local saved hands and preferences.
+                Google Play, Apple's App Store and TestFlight, and your device may use their own network access to install,
+                update, or deliver game files. That platform activity is separate from the game's local saved hands and preferences.
             </p>
         </section>
 
@@ -124,8 +124,8 @@
             </p>
             <h3>Store reviews and website visits</h3>
             <p>
-                If you rate or review Solitaire through Google Play, Google handles that activity under its own terms
-                and privacy policy. If you visit our website, our hosting provider may process ordinary request data
+                If you rate or review Solitaire through Google Play or Apple's App Store, the relevant store provider
+                handles that activity under its own terms and privacy policy. If you visit our website, our hosting provider may process ordinary request data
                 such as your IP address, browser information, and access time to deliver and protect the website.
                 Website information is also described in the <a href="../../privacy.html">Alemdar Labs Privacy Policy</a>.
             </p>
@@ -141,14 +141,21 @@
                 offered in this version.
             </p>
             <p>
-                Google Play may handle installation, updates, licensing, delivery of game files, reviews, and
-                platform diagnostics. Google and your device provider may process device, app, download, or diagnostic
+                Google Play, Apple's App Store, and TestFlight may handle installation, updates, licensing, delivery of
+                game files, reviews, and platform diagnostics. Google, Apple, and your device provider may process device, app, download, or diagnostic
                 information under their own policies and your platform settings. We may receive aggregate store
                 reports or platform-provided crash information to understand compatibility and fix problems.
             </p>
-            <div class="legal-links" role="group" aria-label="Google privacy resources">
+            <p>
+                For TestFlight beta testing, Apple makes tester information, usage, crash reports, and feedback
+                available to us through App Store Connect under its TestFlight terms and privacy information.
+                This platform-provided beta feedback is separate from the optional in-game Firebase playtest.
+            </p>
+            <div class="legal-links" role="group" aria-label="Platform privacy resources">
                 <a class="legal-link" href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>
                 <a class="legal-link" href="https://play.google.com/about/play-terms/" rel="noopener noreferrer">Google Play Terms</a>
+                <a class="legal-link" href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple Privacy Policy</a>
+                <a class="legal-link" href="https://www.apple.com/legal/privacy/data/en/test-flight/" rel="noopener noreferrer">TestFlight and Privacy</a>
             </div>
         </section>
 
@@ -193,12 +200,13 @@
                     deletes this test's server records and anonymous identity, and removes its local records.
                     Ordinary games are preserved. A connection is needed to complete deletion; interrupted
                     deletion resumes when the app is opened again.</li>
-                <li><strong>Local game data:</strong> clear Solitaire's app storage or uninstall the game through
-                    Android settings. This removes local progress and preferences.</li>
+                <li><strong>Local game data:</strong> use the app-data removal controls available on your platform.
+                    On Android, you can clear app storage. Removing an application may leave saved files or settings,
+                    especially on macOS; contact us if you need help locating Solitaire's local data.</li>
                 <li><strong>Game preferences:</strong> use the available settings and new-game options to change
                     your choices.</li>
                 <li><strong>Platform controls:</strong> manage reviews, diagnostics, backups, and device transfers
-                    through your Google account or device settings, where those controls are available.</li>
+                    through your Google or Apple account and device settings, where those controls are available.</li>
                 <li><strong>Privacy requests:</strong> email
                     <a href="mailto:info@alemdarlabs.com">info@alemdarlabs.com</a> to ask about, access, correct, or
                     request deletion of personal information we control, or exercise other rights available under
@@ -222,8 +230,9 @@
                 page even if you have uninstalled the game.
             </p>
             <p>
-                Local game data remains on your device until you replace it through gameplay, clear app storage,
-                uninstall Solitaire, or the operating system removes it. Alemdar Labs cannot remotely view, restore,
+                Local game data remains on your device until you replace it through gameplay, remove the app's stored
+                data, or the operating system removes it. Removing only the application may leave saved files or
+                settings, especially on macOS. Alemdar Labs cannot remotely view, restore,
                 or delete saves stored only on your device. If your device provider keeps a backup, manage or delete
                 that copy through its separate backup controls.
             </p>
