@@ -1,0 +1,199 @@
+{
+  "effectiveDate": "2026-10-26",
+  "privacy": {
+    "en": {
+      "title": "Privacy Policy",
+      "intro": "Pluvia: Story & Collage Maker is provided by Alemdar Labs. This policy explains how the Android app handles information when you create collages, stories and carousel posts.",
+      "sections": [
+        [
+          "Your photos and projects",
+          "Photos, videos, text and project edits that you select or create are processed on your device. Pluvia does not upload your project media to our servers for editing, advertising or AI training. Drafts, imported media and downloaded resources are stored locally. Exported files are saved to your device or sent to a destination you choose."
+        ],
+        [
+          "Photo access and sharing",
+          "Pluvia uses the system picker to access the photos, videos or files you select. Saving an export may use the device’s media library. You control applicable permissions in device settings. If you share a design to another app, that app receives the selected export and its own privacy policy applies."
+        ],
+        [
+          "Templates and technical information",
+          "Pluvia downloads its template catalog, preview images, fonts and other creative resources from our online content service. These requests reveal technical information to our hosting provider, Cloudflare, such as IP address, request time, requested resource, response status and network/device request information. Service and error logs help deliver content, troubleshoot faults and protect the service. These requests do not include your selected photos or project contents."
+        ],
+        [
+          "Subscriptions",
+          "If you purchase a Pluvia subscription through Google Play, Google processes payment under its own terms and privacy policy. Purchase identifiers, selected product, transaction or purchase-token information and subscription status may be processed to validate purchases, provide paid access, restore purchases and prevent fraud. We do not receive your full payment-card details. You can manage or cancel your subscription in Google Play."
+        ],
+        [
+          "Support",
+          "If you contact info@alemdarlabs.com, we receive your email address and the information or attachments you choose to send. We use them to respond and resolve your request. Please do not send private photos or payment details unless they are necessary for the issue you want us to investigate."
+        ],
+        [
+          "Advertising, tracking and accounts",
+          "The current Android app does not contain third-party advertising or analytics SDKs and does not use the Android advertising ID. We do not sell your personal information or share it for targeted advertising. The mobile editor does not require a Pluvia account and does not offer cloud synchronization of your projects."
+        ],
+        [
+          "Service providers and international processing",
+          "We use Cloudflare to host and deliver online content, Google Play for Android distribution and any purchases, and email services to handle support. Providers may process information on servers outside your country. Information may also be disclosed when required by law or reasonably needed to protect rights and prevent abuse. Transfers and processing remain subject to applicable data-protection requirements."
+        ],
+        [
+          "Retention and deletion",
+          "Local drafts and imported media remain until you remove them in the app or remove the app’s stored data; exported files remain in the destination you selected until you delete them there. Device backup settings may separately retain copies. Technical logs are kept for the period needed to operate, secure and troubleshoot the service, subject to the hosting provider’s retention settings. Support and purchase records are retained only as needed to handle requests, maintain entitlements, resolve disputes and meet legal recordkeeping duties. You can ask us to delete information held by us by emailing info@alemdarlabs.com. Deleting app data does not cancel a subscription or erase records held independently by Google."
+        ],
+        [
+          "Your choices and rights",
+          "You can remove local projects, manage device permissions, cancel subscriptions through Google Play and contact us about access, correction or deletion of information held by us. Depending on your location, you may also have rights to object, restrict processing, request portability or complain to a data-protection authority. Where applicable, processing is based on providing the requested service, legitimate interests in security and support, compliance with legal obligations, or your consent when required."
+        ],
+        [
+          "Children and security",
+          "Pluvia is intended for users aged 13 and over and is not directed to children under 13. If you believe a child has provided personal information to us, contact us so we can investigate and delete it where appropriate. Online content is transferred over HTTPS. We use reasonable safeguards, but no system can guarantee absolute security."
+        ],
+        [
+          "Updates and contact",
+          "We may update this policy as the app changes. The effective date above identifies the current version. Material changes will be communicated as required by applicable law. For privacy questions or requests, contact Alemdar Labs at info@alemdarlabs.com."
+        ]
+      ]
+    },
+    "tr": {
+      "title": "Gizlilik Politikası",
+      "intro": "Pluvia: Story & Collage Maker, Alemdar Labs tarafından sunulur. Bu politika, kolaj, hikâye ve kaydırmalı gönderi hazırlarken Android uygulamasının bilgileri nasıl işlediğini açıklar.",
+      "sections": [
+        [
+          "Fotoğraflarınız ve projeleriniz",
+          "Seçtiğiniz veya oluşturduğunuz fotoğraflar, videolar, metinler ve proje düzenlemeleri cihazınızda işlenir. Pluvia, proje medyanızı düzenleme, reklam veya yapay zekâ eğitimi amacıyla sunucularımıza yüklemez. Taslaklar, içe aktarılan medya ve indirilen kaynaklar yerel olarak saklanır. Dışa aktarılan dosyalar cihazınıza kaydedilir veya seçtiğiniz hedefe gönderilir."
+        ],
+        [
+          "Fotoğraf erişimi ve paylaşım",
+          "Pluvia, seçtiğiniz fotoğraflara, videolara veya dosyalara erişmek için sistem seçicisini kullanır. Dışa aktarma sırasında cihazın medya kitaplığı kullanılabilir. İlgili izinleri cihaz ayarlarından yönetebilirsiniz. Bir tasarımı başka uygulamada paylaşırsanız seçilen çıktı o uygulamaya aktarılır ve o uygulamanın gizlilik politikası geçerli olur."
+        ],
+        [
+          "Şablonlar ve teknik bilgiler",
+          "Pluvia; şablon kataloğunu, önizleme görsellerini, yazı tiplerini ve diğer tasarım kaynaklarını çevrimiçi içerik hizmetimizden indirir. Bu istekler, barındırma sağlayıcımız Cloudflare ile IP adresi, istek zamanı, istenen kaynak, yanıt durumu ve ağ/cihaz isteği bilgileri gibi teknik bilgilerin paylaşılmasına neden olur. Hizmet ve hata kayıtları; içeriği sunmak, sorunları gidermek ve hizmeti korumak için kullanılır. Bu istekler, seçtiğiniz fotoğrafları veya proje içeriğinizi içermez."
+        ],
+        [
+          "Abonelikler",
+          "Google Play üzerinden Pluvia aboneliği satın alırsanız ödeme, Google tarafından kendi koşulları ve gizlilik politikası kapsamında işlenir. Satın almayı doğrulamak, ücretli erişim sağlamak, satın alımları geri yüklemek ve dolandırıcılığı önlemek için satın alma tanımlayıcıları, seçilen ürün, işlem veya satın alma belirteci bilgileri ve abonelik durumu işlenebilir. Ödeme kartınızın tam bilgilerini almayız. Aboneliğinizi Google Play üzerinden yönetebilir veya iptal edebilirsiniz."
+        ],
+        [
+          "Destek",
+          "info@alemdarlabs.com adresine yazarsanız e-posta adresinizi ve paylaşmayı seçtiğiniz bilgileri ya da ekleri alırız. Bunları yanıt vermek ve talebinizi çözmek için kullanırız. İncelememizi istediğiniz sorun için gerekli olmadıkça özel fotoğraf veya ödeme bilgisi göndermeyin."
+        ],
+        [
+          "Reklamlar, takip ve hesaplar",
+          "Mevcut Android uygulaması üçüncü taraf reklam veya analiz SDK’sı içermez ve Android reklam kimliğini kullanmaz. Kişisel bilgilerinizi satmayız veya hedefli reklam amacıyla paylaşmayız. Mobil düzenleyici Pluvia hesabı gerektirmez ve projeleriniz için bulut senkronizasyonu sunmaz."
+        ],
+        [
+          "Hizmet sağlayıcılar ve uluslararası işleme",
+          "Çevrimiçi içeriği barındırmak ve sunmak için Cloudflare, Android dağıtımı ve varsa satın alımlar için Google Play, destek için e-posta hizmetleri kullanılır. Sağlayıcılar bilgileri ülkeniz dışındaki sunucularda işleyebilir. Bilgiler, hukuken gerekli olduğunda veya hakların korunması ve kötüye kullanımın önlenmesi için makul ölçüde gerektiğinde de açıklanabilir. Aktarım ve işleme, geçerli veri koruma gerekliliklerine tabidir."
+        ],
+        [
+          "Saklama ve silme",
+          "Yerel taslaklar ve içe aktarılan medya, bunları uygulamada silene veya uygulamanın depolanan verilerini kaldırana kadar saklanır. Dışa aktarılan dosyalar, seçtiğiniz konumdan siz silene kadar orada kalır. Cihaz yedekleme ayarları ayrıca kopya saklayabilir. Teknik kayıtlar, barındırma sağlayıcısının saklama ayarlarına tabi olarak hizmeti işletmek, korumak ve sorunları gidermek için gereken süre boyunca tutulur. Destek ve satın alma kayıtları yalnızca talepleri ele almak, erişim haklarını sürdürmek, uyuşmazlıkları çözmek ve yasal kayıt yükümlülüklerini karşılamak için gerektiği sürece saklanır. Elimizdeki bilgilerin silinmesini info@alemdarlabs.com adresinden isteyebilirsiniz. Uygulama verilerini silmek aboneliği iptal etmez ve Google’ın bağımsız olarak tuttuğu kayıtları silmez."
+        ],
+        [
+          "Tercihleriniz ve haklarınız",
+          "Yerel projeleri silebilir, cihaz izinlerini yönetebilir, Google Play üzerinden aboneliğinizi iptal edebilir ve elimizdeki bilgilere erişim, düzeltme veya silme talepleriyle bize ulaşabilirsiniz. Bulunduğunuz yere göre itiraz etme, işlemeyi kısıtlama, veri taşınabilirliği isteme veya veri koruma makamına şikâyette bulunma haklarınız da olabilir. Geçerli olduğu durumlarda işleme; talep edilen hizmetin sunulmasına, güvenlik ve destek için meşru menfaatlere, yasal yükümlülüklere veya gerektiğinde rızanıza dayanır."
+        ],
+        [
+          "Çocuklar ve güvenlik",
+          "Pluvia, 13 yaş ve üzerindeki kullanıcılara yöneliktir; 13 yaş altındaki çocuklar için tasarlanmamıştır. Bir çocuğun bize kişisel bilgi ilettiğini düşünüyorsanız incelememiz ve uygun olduğunda silmemiz için bizimle iletişime geçin. Çevrimiçi içerik HTTPS üzerinden aktarılır. Makul güvenlik önlemleri uygularız; ancak hiçbir sistem mutlak güvenlik sağlayamaz."
+        ],
+        [
+          "Güncellemeler ve iletişim",
+          "Uygulama değiştikçe bu politikayı güncelleyebiliriz. Yukarıdaki yürürlük tarihi güncel sürümü gösterir. Önemli değişiklikler, geçerli hukukun gerektirdiği şekilde bildirilir. Gizlilik soruları ve talepleri için info@alemdarlabs.com adresinden Alemdar Labs ile iletişime geçebilirsiniz."
+        ]
+      ]
+    }
+  },
+  "terms": {
+    "en": {
+      "title": "Terms of Use",
+      "intro": "These terms apply to Pluvia: Story & Collage Maker, provided by Alemdar Labs. By using the app, you agree to these terms to the extent permitted by applicable law.",
+      "sections": [
+        [
+          "Using Pluvia",
+          "Pluvia lets you create and export photo collages, stories and carousel designs. You must be at least 13 years old. If you cannot legally agree to these terms yourself, a parent or guardian must authorize your use. Use the app lawfully and respect the rights and privacy of others."
+        ],
+        [
+          "Your content",
+          "You keep ownership of the photos, videos, text and designs you bring to Pluvia. You are responsible for having the rights and permissions needed to use and share that content. Pluvia does not claim ownership of your personal media or require a license to upload it for local editing."
+        ],
+        [
+          "Templates and app materials",
+          "The app, templates, fonts, stickers and other supplied materials belong to Alemdar Labs or their respective licensors. You may use them within Pluvia to create and share finished designs, subject to any license shown with a particular resource. Do not extract, resell or redistribute the app or its supplied resources as a competing template or asset collection. Third-party open-source and font licenses remain applicable."
+        ],
+        [
+          "Free features and subscriptions",
+          "Some features or resources may require an optional Pluvia subscription. Available benefits, billing period, price, currency and any trial terms are shown in the app and Google Play before you confirm a purchase. Only the offer shown at checkout applies. A trial is available only when explicitly offered and only to eligible users."
+        ],
+        [
+          "Renewal, cancellation and refunds",
+          "Subscriptions purchased through Google Play are billed by Google and renew automatically unless cancelled through Google Play. Cancel before the next renewal to avoid the next charge. After cancellation, access normally continues until the paid period ends, subject to the store’s rules and applicable law. Uninstalling Pluvia does not cancel a subscription. A free trial, if offered, converts to a paid subscription on the date and at the price disclosed at checkout unless cancelled in time. Refunds are handled under Google Play policies and applicable consumer law. Statutory rights are not excluded by these terms."
+        ],
+        [
+          "Restoring access",
+          "Purchase access is associated with the store account used to subscribe. Use the same Google Play account when restoring eligible purchases. Purchases on one platform do not automatically grant access on another unless explicitly stated. If paid access is missing, contact info@alemdarlabs.com with enough information to identify the issue; never send full card details."
+        ],
+        [
+          "Projects, exports and availability",
+          "Keep copies of important work. Local projects can be lost if you clear app data, remove the app, lose your device or encounter a technical failure. Export results may depend on source media, device capability and the receiving platform. Features and template availability may change; any changes to paid services remain subject to applicable law and store rules."
+        ],
+        [
+          "Acceptable use",
+          "Do not use Pluvia to violate intellectual-property rights, invade privacy, distribute unlawful material, bypass purchase restrictions or interfere with the service. Access to online services may be restricted when reasonably necessary to address abuse, fraud or security risks, subject to applicable law."
+        ],
+        [
+          "Responsibility and your rights",
+          "We aim to keep Pluvia reliable but cannot promise uninterrupted or error-free operation. To the extent allowed by law, the app is provided as available. Nothing in these terms excludes non-waivable warranties, consumer remedies, liability for fraud or any liability that cannot legally be limited."
+        ],
+        [
+          "Privacy, updates and contact",
+          "Our Privacy Policy explains how information is handled. We may update these terms as the service changes and will provide notice when required by law. Material changes will not remove rights you already have under applicable law. Questions about Pluvia or these terms can be sent to Alemdar Labs at info@alemdarlabs.com."
+        ]
+      ]
+    },
+    "tr": {
+      "title": "Kullanım Koşulları",
+      "intro": "Bu koşullar, Alemdar Labs tarafından sunulan Pluvia: Story & Collage Maker için geçerlidir. Uygulamayı kullanarak, geçerli hukukun izin verdiği ölçüde bu koşulları kabul etmiş olursunuz.",
+      "sections": [
+        [
+          "Pluvia’yı kullanma",
+          "Pluvia; fotoğraf kolajları, hikâyeler ve kaydırmalı gönderi tasarımları oluşturmanızı ve dışa aktarmanızı sağlar. En az 13 yaşında olmalısınız. Bu koşulları tek başınıza hukuken kabul edemiyorsanız kullanımınıza ebeveyniniz veya yasal temsilciniz izin vermelidir. Uygulamayı hukuka uygun kullanın; başkalarının haklarına ve gizliliğine saygı gösterin."
+        ],
+        [
+          "İçeriğiniz",
+          "Pluvia’ya aktardığınız fotoğrafların, videoların, metinlerin ve tasarımların mülkiyeti sizde kalır. Bu içerikleri kullanmak ve paylaşmak için gerekli hak ve izinlere sahip olmak sizin sorumluluğunuzdadır. Pluvia, kişisel medyanız üzerinde mülkiyet iddia etmez ve yerel düzenleme için içeriğinizi yükleme lisansı talep etmez."
+        ],
+        [
+          "Şablonlar ve uygulama materyalleri",
+          "Uygulama, şablonlar, yazı tipleri, çıkartmalar ve sunulan diğer materyaller Alemdar Labs’e veya ilgili lisans sahiplerine aittir. Belirli bir kaynakla birlikte gösterilen lisansa tabi olarak bunları Pluvia içinde tamamlanmış tasarımlar oluşturmak ve paylaşmak için kullanabilirsiniz. Uygulamayı veya sağlanan kaynakları ayrı bir şablon ya da varlık koleksiyonu olarak çıkarmayın, yeniden satmayın veya dağıtmayın. Üçüncü taraf açık kaynak ve yazı tipi lisansları geçerliliğini korur."
+        ],
+        [
+          "Ücretsiz özellikler ve abonelikler",
+          "Bazı özellikler veya kaynaklar isteğe bağlı Pluvia aboneliği gerektirebilir. Sunulan avantajlar, faturalama dönemi, fiyat, para birimi ve varsa deneme koşulları, satın almayı onaylamadan önce uygulamada ve Google Play’de gösterilir. Yalnızca ödeme ekranında gösterilen teklif geçerlidir. Deneme süresi ancak açıkça sunulduğunda ve uygun kullanıcılara uygulanır."
+        ],
+        [
+          "Yenileme, iptal ve iadeler",
+          "Google Play üzerinden satın alınan abonelikler Google tarafından ücretlendirilir ve Google Play’den iptal edilmedikçe otomatik yenilenir. Sonraki ücretin alınmaması için bir sonraki yenilemeden önce iptal edin. İptal sonrasında erişim, mağaza kuralları ve geçerli hukuk saklı kalmak üzere, genellikle ödenen dönemin sonuna kadar sürer. Pluvia’yı kaldırmak aboneliği iptal etmez. Varsa ücretsiz deneme, zamanında iptal edilmezse ödeme ekranında belirtilen tarihte ve fiyatla ücretli aboneliğe dönüşür. İadeler Google Play politikaları ve geçerli tüketici hukuku kapsamında ele alınır. Yasal haklarınız bu koşullarla kaldırılmaz."
+        ],
+        [
+          "Erişimi geri yükleme",
+          "Satın alma erişimi, abonelik için kullanılan mağaza hesabıyla ilişkilidir. Uygun satın alımları geri yüklerken aynı Google Play hesabını kullanın. Açıkça belirtilmedikçe bir platformdaki satın alma diğer platformda otomatik erişim sağlamaz. Ücretli erişiminiz görünmüyorsa sorunu tanımlamaya yetecek bilgilerle info@alemdarlabs.com adresine yazın; kart bilgilerinizin tamamını göndermeyin."
+        ],
+        [
+          "Projeler, çıktılar ve kullanılabilirlik",
+          "Önemli çalışmalarınızın kopyalarını saklayın. Uygulama verilerini temizlemeniz, uygulamayı kaldırmanız, cihazınızı kaybetmeniz veya teknik hata yaşanması yerel projelerin kaybına yol açabilir. Dışa aktarma sonuçları kaynak medyaya, cihazın kapasitesine ve alıcı platforma bağlı olabilir. Özellikler ve şablonların kullanılabilirliği değişebilir; ücretli hizmetlerdeki değişiklikler geçerli hukuk ve mağaza kurallarına tabidir."
+        ],
+        [
+          "Kabul edilebilir kullanım",
+          "Pluvia’yı fikrî mülkiyet haklarını ihlal etmek, gizliliğe müdahale etmek, hukuka aykırı içerik dağıtmak, satın alma kısıtlamalarını aşmak veya hizmetin çalışmasını engellemek için kullanmayın. Kötüye kullanım, dolandırıcılık veya güvenlik risklerini ele almak için makul ölçüde gerektiğinde çevrimiçi hizmetlere erişim, geçerli hukuka tabi olarak kısıtlanabilir."
+        ],
+        [
+          "Sorumluluk ve haklarınız",
+          "Pluvia’yı güvenilir tutmayı amaçlarız; ancak kesintisiz veya hatasız çalışacağını garanti edemeyiz. Uygulama, hukukun izin verdiği ölçüde mevcut hâliyle sunulur. Bu koşullar; vazgeçilemeyen garantileri, tüketici başvuru yollarını, hileden doğan sorumluluğu veya hukuken sınırlandırılamayan herhangi bir sorumluluğu ortadan kaldırmaz."
+        ],
+        [
+          "Gizlilik, güncellemeler ve iletişim",
+          "Bilgilerin nasıl işlendiği Gizlilik Politikamızda açıklanır. Hizmet değiştikçe bu koşulları güncelleyebilir ve hukuken gerektiğinde bildirimde bulunabiliriz. Önemli değişiklikler, geçerli hukuk kapsamında mevcut haklarınızı ortadan kaldırmaz. Pluvia veya bu koşullarla ilgili sorularınızı info@alemdarlabs.com adresinden Alemdar Labs’e iletebilirsiniz."
+        ]
+      ]
+    }
+  }
+}
