@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/Logo_128x128.png">
-    <title>Alemdar Labs | Crafting Digital Experiences</title>
+    <title>Alemdar Labs | Games and Apps</title>
+    <meta name="description" content="Alemdar Labs is a game and app studio in Istanbul. Explore Beach Volleyball: GG, our 2D pixel art beach volleyball game in development, and Vakitify.">
+    <link rel="canonical" href="https://www.alemdarlabs.com/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -95,6 +97,31 @@
             color: var(--text-main);
         }
 
+        nav .logo { color: #f5f5f7; }
+        nav .nav-links a { color: #c5c5c7; }
+        nav .nav-links a:hover { color: #ffffff; }
+        a:focus-visible { outline: 3px solid var(--accent-color); outline-offset: 4px; }
+        section[id] { scroll-margin-top: calc(var(--nav-height) + 20px); }
+        .studio-intro { max-width: 980px; margin: 0 auto; padding: 112px 22px 48px; }
+        .studio-intro h1 { font-size: clamp(36px, 6vw, 60px); letter-spacing: -1.5px; }
+        .studio-intro p { margin-top: 12px; max-width: 640px; font-size: 20px; }
+        .games-section { max-width: 980px; margin: 0 auto; padding: 0 22px 48px; }
+        .games-section h2 { font-size: 28px; margin-bottom: 20px; }
+        .game-card { padding: 28px; background: var(--section-bg); border: 1px solid rgba(134, 134, 139, 0.3); border-radius: 20px; }
+        .game-card h3 { font-size: 26px; margin: 8px 0; }
+        .game-card p { max-width: 680px; margin-bottom: 20px; }
+        .game-status { font-size: 13px; font-weight: 600; }
+        .game-links { display: flex; flex-wrap: wrap; gap: 16px 24px; }
+        .game-links a { color: var(--accent-color); text-underline-offset: 3px; }
+        @media (max-width: 520px) {
+            :root { --nav-height: 72px; }
+            .nav-content { flex-wrap: wrap; justify-content: center; align-content: center; gap: 8px 20px; padding: 8px 16px; }
+            .nav-links { gap: 20px; }
+            .studio-intro { padding-top: 112px; }
+            .game-card { padding: 20px; }
+            .cta-buttons { flex-wrap: wrap; justify-content: center; }
+        }
+
         /* Hero Section */
         .hero {
             padding-top: calc(var(--nav-height) + 60px);
@@ -105,7 +132,7 @@
             align-items: center;
         }
 
-        .hero h1 {
+        .hero h2 {
             font-size: clamp(40px, 8vw, 80px);
             font-weight: 800;
             letter-spacing: -2px;
@@ -294,10 +321,11 @@
 
 <body>
 
-    <nav>
+    <nav aria-label="Main navigation">
         <div class="nav-content">
-            <a href="#" class="logo">Alemdar Labs</a>
+            <a href="#about" class="logo">Alemdar Labs</a>
             <div class="nav-links">
+                <a href="#games">Games</a>
                 <a href="#vakitify">Vakitify</a>
                 <a href="#about">About</a>
                 <a href="contact.html">Contact</a>
@@ -306,8 +334,24 @@
     </nav>
 
     <main>
+        <section class="studio-intro" id="about" aria-labelledby="studio-title">
+            <h1 id="studio-title">Alemdar Labs</h1>
+            <p>We are a game and app studio based in Istanbul, Turkey. Discover our projects, player support, and privacy information.</p>
+        </section>
+        <section class="games-section" id="games" aria-labelledby="games-title">
+            <h2 id="games-title">Our games</h2>
+            <article class="game-card">
+                <span class="game-status">In development</span>
+                <h3>Beach Volleyball: GG</h3>
+                <p>A 2D pixel art beach volleyball game by Alemdar Labs, designed around 1v1 and 2v2 matches. Single-player and online multiplayer modes are planned.</p>
+                <div class="game-links">
+                    <a href="games/beach-volleyball/">Game overview and support</a>
+                    <a href="games/beach-volleyball/privacy.html">Game Privacy Policy</a>
+                </div>
+            </article>
+        </section>
         <section class="hero" id="vakitify">
-            <h1>Vakitify</h1>
+            <h2>Vakitify</h2>
             <p>Elegance in time. The most precise and beautiful prayer times app for your daily life.</p>
 
             <div class="cta-buttons">
@@ -340,7 +384,7 @@
             </div>
         </section>
 
-        <section class="features" id="about">
+        <section class="features" id="vakitify-features">
             <div class="feature">
                 <h3>Minimalist Design</h3>
                 <p>Distraction-free interface that puts what matters most right in front of you. Clean typography and
@@ -362,7 +406,7 @@
     <footer id="contact">
         <div class="footer-content">
             <div>
-                &copy; 2022-2025 Alemdar Labs. All rights reserved. Istanbul.
+                &copy; 2022-2026 Alemdar Labs. All rights reserved. Istanbul.
             </div>
             <div class="footer-links">
                 <a href="apps/vakitify/privacy.html">Privacy Policy</a>
